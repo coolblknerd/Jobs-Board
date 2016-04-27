@@ -1,0 +1,27 @@
+<%= form_for(@job, html: { class: 'form-group' }) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, placeholder: 'Job Title' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, placeholder: 'Job description' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company %><br>
+    <%= f.text_field :company, placeholder: 'Company Title' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, placeholder: 'Link to Job' %>
+  </div>
+
+  <div>
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
