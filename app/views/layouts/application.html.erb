@@ -8,6 +8,19 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">JobsBoard</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, jobs_path(category: category.name ) %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
 <%= yield %>
 
 </body>

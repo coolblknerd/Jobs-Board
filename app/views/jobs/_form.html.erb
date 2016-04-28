@@ -1,6 +1,10 @@
 <%= form_for(@job, html: { class: 'form-group' }) do |f| %>
 
   <div class="form-group">
+    <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category"} %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title, placeholder: 'Job Title' %>
   </div>
