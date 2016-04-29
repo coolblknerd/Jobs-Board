@@ -9,19 +9,22 @@
 <body>
 
   <nav class="navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">JobsBoard</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <% Category.all.each do |category| %>
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'JobsBoard', root_path, class: "navbar-brand" %>
+      </div>
+      <ul class="nav navbar-nav">
+        <% Category.all.each do |category| %>
         <li><%= link_to category.name, jobs_path(category: category.name ) %></li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
+        <% end %>
+      </ul>
+      <%= link_to "New Job", new_job_path, class: "navbar-text navbar-right navbar-link" %>
+    </div>
+  </nav>
 
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
